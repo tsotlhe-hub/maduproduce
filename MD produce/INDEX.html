@@ -1,188 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- HEAD: page title and link to the stylesheet (style.css) -->
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home | Madu Produce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Madu Produce - Fresh, Local & Sustainable</title>
+    <!-- Modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- TOP BAR: logo + navigation menu to all 7 pages -->
-    <header class="top">
-      <a class="brand" href="index.html">
-        <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
-          <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
-          <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
-        </svg>
-        <span>
-          <b>MADU PRODUCE</b>
-          <small>Fresh · Local · Sustainable</small>
-        </span>
-      </a>
-      <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-      <!-- NAVIGATION: 'active' marks the page you are on -->
-      <nav id="nav">
-        <a href="index.html" class=active aria-current=page>Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-    </header>
+
+    <!-- TOP BAR -->
+    <!-- TOP HEADER BAR: Logo & Navigation -->
+<header class="top">
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+      <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+      <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+    </svg>
+    <span>
+      <b>MADU PRODUCE</b>
+      <small>Fresh · Local · Sustainable</small>
+    </span>
+  </a>
+
+  <!-- Mobile Hamburger Menu Button -->
+  <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">☰</button>
+
+  <!-- Navigation Links -->
+  <nav id="nav">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
     <main>
-      <!-- HERO: background photo, looping video, headline and button -->
+      <!-- HERO: Contained video background with gradient overlay -->
       <section class="hero vid">
-        <!-- VIDEO: plays by itself, muted, in a loop.-->
-        <video class="hv" autoplay muted loop playsinline preload="auto">
+        <video class="hv" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600&q=80">
           <source src="hero,mp4.mp4" type="video/mp4">
+          <source src="hero.mp4" type="video/mp4">
         </video>
-        <div class="shade">
-        </div>
-        <!-- HERO TEXT: headline, sentence and button over the video -->
+        
+        <div class="shade"></div>
+
         <div class="hin">
+          <div class="hero-badge">🌱 100% Organically Grown in Botswana</div>
           <h1>Fresh from Our Farm to Your Table</h1>
-          <p>Quality, locally grown agricultural produce for a healthier tomorrow.</p>
-          <a class="btn" href="products.html">Explore Our Products ›</a>
+          <p>Quality, locally grown agricultural produce harvested at peak ripeness for healthier families and a greener tomorrow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="products.html">Explore Our Products &rsaquo;</a>
+            <a class="btn btn-outline" href="contact.html">Place an Order</a>
+          </div>
         </div>
       </section>
-      <!-- FOUR FEATURE BOXES -->
-<div class="g4">
-  <div class="fc">
-    <img class="fc-image" src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&q=80" alt="Fresh Tomatoes">
-    <h3>Fresh Produce</h3>
-    <p>Locally grown, high quality fresh vegetables daily.</p>
-  </div>
-  <div class="fc">
-    <img class="fc-image" src="images/farm.jpg" alt="Sustainable Farming">
-    <h3>Sustainable Farming</h3>
-    <p>Good for people and the planet with drip irrigation.</p>
-  </div>
-  <div class="fc">
-    <img class="fc-image" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="Community">
-    <h3>Community Support</h3>
-    <p>Supporting local farmers and families.</p>
-  </div>
-  <div class="fc">
-    <img class="fc-image" src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=600&q=80" alt="Quality">
-    <h3>Trusted Quality</h3>
-    <p>Freshness you can count on every time.</p>
-  </div>
-</div>
+
+      <!-- FOUR VALUE PROPOSITION CARDS -->
+      <section class="feature-section">
+        <div class="container">
+          <div class="g4">
+            <div class="fc">
+              <div class="fc-img-wrap">
+                <img class="fc-image" src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&q=80" alt="Fresh Produce">
+              </div>
+              <div class="fc-body">
+                <span class="fc-icon"></span>
+                <h3>Fresh Produce</h3>
+                <p>Locally harvested daily to guarantee crispness, nutrition, and rich natural flavor.</p>
+              </div>
+            </div>
+
+            <div class="fc">
+              <div class="fc-img-wrap">
+                <img class="fc-image" src="images/farm.jpg" alt="Sustainable Farming" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80'}">
+              </div>
+              <div class="fc-body">
+                <span class="fc-icon"></span>
+                <h3>Sustainable Farming</h3>
+                <p>Water-smart drip irrigation and eco-friendly soil care preserving Botswana's environment.</p>
+              </div>
+            </div>
+
+            <div class="fc">
+              <div class="fc-img-wrap">
+                <img class="fc-image" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="Community Support">
+              </div>
+              <div class="fc-body">
+                <span class="fc-icon"></span>
+                <h3>Community Support</h3>
+                <p>Empowering local farm workers and providing affordable fresh food to local households.</p>
+              </div>
+            </div>
+
+            <div class="fc">
+              <div class="fc-img-wrap">
+                <img class="fc-image" src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=600&q=80" alt="Trusted Quality">
+              </div>
+              <div class="fc-body">
+                <span class="fc-icon"></span>
+                <h3>Trusted Quality</h3>
+                <p>Rigorous grading and clean handling ensure you receive the finest harvest every time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PRODUCTS -->
       <section class="sec">
-        <h2 class="kick">Featuto">
-              <img src="https://images.unsplash.com/photo-1568581789190-ae90a7da930b?auto=format&fit=crop&w=800&q=70" alt="Tomatoes" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/tomato.jpg'}else this.remove()">
-            </div>
-            <h3>Tomatoes</h3>
-            <p>Juicy, vine-ripened tomatoes.</p>
-            <div class="pr">
-              <b>P20/kg</b>
-              <span class="stock">In Stock</span>
-            </div>
-          </article>
-          <article class="pc" data-cat="Vegetables">
-            <div class="pimg pepper">
-              <img src="https://images.unsplash.com/photo-1592548868664-f8b4e4b1cfb7?auto=format&fit=crop&w=800&q=70" alt="Green Pepper" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/pepper.jpg'}else this.remove()">
-            </div>
-            <h3>Green Pepper</h3>
-            <p>Crisp and fresh green peppers.</p>
-            <div class="pr">
-              <b>P25/kg</b>
-              <span class="stock">In Stock</span>
-            </div>
-          </article>
-          <article class="pc" data-cat="Vegetables">
-            <div class="pimg onion">
-              <img src="https://images.unsplash.com/photo-1571167002474-17b083c46f90?auto=format&fit=crop&w=800&q=70" alt="Onions" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/onion.jpg'}else this.remove()">
-            </div>
-            <h3>Onions</h3>
-            <p>Flavourful onions, ideal for cooking.</p>
-            <div class="pr">
-              <b>P14/kg</b>
-              <span class="stock">In Stock</span>
-            </div>
-          </article>
-          <article class="pc" data-cat="Vegetables">
-            <div class="pimg carrot">
-              <img src="https://images.unsplash.com/photo-1687199126330-556bb3c85b2f?auto=format&fit=crop&w=800&q=70" alt="Carrots" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/carrot.jpg'}else this.remove()">
-            </div>
-            <h3>Carrots</h3>
-            <p>Sweet and crunchy carrots.</p>
-            <div class="pr">
-              <b>P16/kg</b>
-              <span class="stock">In Stock</span>
-            </div>
-          </article>
+        <div class="container">
+          <div class="sec-header">
+            <span class="section-tag">Farm Highlights</span>
+            <h2 class="kick">Featured Products</h2>
+            <p class="sec-subtitle">Grown with care, picked fresh, and packed with vitamins.</p>
+          </div>
+
+          <div class="pgrid">
+            <!-- Product 1: Tomatoes -->
+            <article class="pc" data-cat="Vegetables">
+              <div class="pimg">
+                <span class="badge">Popular</span>
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=70" alt="Fresh Tomatoes" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/tomato.jpg'}else this.remove()">
+              </div>
+              <div class="pc-info">
+                <span class="cat">Vegetables</span>
+                <h3>Tomatoes</h3>
+                <p>Juicy, sweet, vine-ripened red tomatoes ideal for salads, cooking, and sauces.</p>
+                <div class="pr">
+                  <div class="price-val"><b>P20</b> <small>/ kg</small></div>
+                  <span class="stock in"><span class="pulse"></span>In Stock</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 2: Green Pepper -->
+            <article class="pc" data-cat="Vegetables">
+              <div class="pimg">
+                <span class="badge">Fresh Pick</span>
+                <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=800&q=70" alt="Green Pepper" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/pepper.jpg'}else this.remove()">
+              </div>
+              <div class="pc-info">
+                <span class="cat">Vegetables</span>
+                <h3>Green Pepper</h3>
+                <p>Crisp, thick-walled bell peppers full of aroma and high in vitamin C.</p>
+                <div class="pr">
+                  <div class="price-val"><b>P25</b> <small>/ kg</small></div>
+                  <span class="stock in"><span class="pulse"></span>In Stock</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 3: Onions -->
+            <article class="pc" data-cat="Vegetables">
+              <div class="pimg">
+                <img src="https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=70" alt="Onions" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/onion.jpg'}else this.remove()">
+              </div>
+              <div class="pc-info">
+                <span class="cat">Vegetables</span>
+                <h3>Onions</h3>
+                <p>Flavourful, firm brown onions with great storage life, essential for any kitchen.</p>
+                <div class="pr">
+                  <div class="price-val"><b>P14</b> <small>/ kg</small></div>
+                  <span class="stock in"><span class="pulse"></span>In Stock</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 4: Carrots -->
+            <article class="pc" data-cat="Vegetables">
+              <div class="pimg">
+                <img src="https://cdn.pixabay.com/photo/2016/11/23/00/22/carrots-1851424_1280.jpg" alt="Carrots" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/carrot.jpg'}else this.remove()">
+              </div>
+              <div class="pc-info">
+                <span class="cat">Vegetables</span>
+                <h3>Carrots</h3>
+                <p>Sweet, crunchy, deep-orange farm carrots washed and ready for snacking or cooking.</p>
+                <div class="pr">
+                  <div class="price-val"><b>P16</b> <small>/ kg</small></div>
+                  <span class="stock in"><span class="pulse"></span>In Stock</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="sec-cta">
+            <a class="btn btn-primary" href="products.html">View All Products &rsaquo;</a>
+          </div>
         </div>
-        <p>
-          <a class="btn" href="products.html">View All Products ›</a>
-        </p>
       </section>
+
+      <!-- MISSION & VISION -->
       <section class="mv">
-        <div>
-          <span class="ic w">🌿</span>
-          <h3>Our Mission</h3>
-          <p>Madu Produce builds a positive relationship between farmers and consumers by making sure fresh produce reaches valued customers in a sustainable and reliable way.</p>
-        </div>
-        <div>
-          <span class="ic w">👁</span>
-          <h3>Our Vision</h3>
-          <p>To become a trusted and leading local agricultural produce business, recognised for fresh quality products and for contributing to the economy’s agricultural sector.</p>
+        <div class="container">
+          <div class="mv-grid">
+            <div class="mv-card">
+              <div class="mv-icon-box"></div>
+              <h3>Our Mission</h3>
+              <p>Madu Produce builds a positive relationship between farmers and consumers by making sure fresh produce reaches valued customers in a sustainable, hygienic, and reliable way.</p>
+            </div>
+            <div class="mv-card">
+              <div class="mv-icon-box"></div>
+              <h3>Our Vision</h3>
+              <p>To become a trusted and leading local agricultural produce business, recognised for fresh quality products and for actively contributing to Botswana's food security.</p>
+            </div>
+          </div>
         </div>
       </section>
-    </main>
-    <!-- PREVIOUS / HOME / NEXT page links -->
-    <div class="pager">
-      <a href="sitemap.html">‹ Site Map</a>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us ›</a>
-    </div>
-    <!-- FOOTER: contact details, quick links, social icons -->
-    <footer>
-      <div class="fgrid">
-        <div>
-          <div class="brand light">
-            <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
-              <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
-              <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
-            </svg>
-            <span>
-              <b>MADU PRODUCE</b>
-              <small>Fresh · Local · Sustainable</small>
-            </span>
-          </div>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <div class="ql">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="services.html">Services</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="sitemap.html">Site Map</a>
-          </div>
-        </div>
-        <div>
-          <h4>Follow Us</h4>
-          <div class="soc">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Instagram">◎</a>
-            <a href="#" aria-label="YouTube">▶</a>
-          </div>
+
+      <!-- PAGE NAVIGATION PILLS -->
+      <div class="pager-container">
+        <div class="pager">
+          <span class="pager-label">Explore Pages:</span>
+          <a href="index.html" class="active" aria-current="page">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
-      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i>
-      </p>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="fgrid">
+          <!-- Col 1 -->
+          <div class="fcol">
+            <div class="brand light">
+              <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+                <path d="M20 36V18" stroke="#52b788" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#52b788"/>
+              </svg>
+              <span class="brand-text">
+                <b>MADU PRODUCE</b>
+                <small>Fresh · Local · Sustainable</small>
+              </span>
+            </div>
+            <p class="brand-desc">Empowering local agriculture and supplying the freshest vegetables straight from Botswana soil to your home and business.</p>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="fcol">
+            <h4>Get in Touch</h4>
+            <ul class="contact-list">
+              <li><a href="tel:+26771234567">+267 71 234 567</a></li>
+              <li><a href="mailto:info@maduproduce.co.bw">info@maduproduce.co.bw</a></li>
+              <li>Plot 123, Gaborone, Botswana</li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="fcol">
+            <h4>Quick Links</h4>
+            <div class="ql">
+              <a href="index.html">Home</a>
+              <a href="about.html">About Us</a>
+              <a href="products.html">All Products</a>
+              <a href="services.html">Our Services</a>
+              <a href="contact.html">Contact & Orders</a>
+            </div>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="fcol">
+            <h4>Farm Hours</h4>
+            <p class="hours-text">Mon - Sat: 7:00 AM - 5:30 PM<br>Sunday: Closed</p>
+            <h4 class="follow-title">Follow Us</h4>
+            <div class="soc">
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="#" aria-label="WhatsApp">wa</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-bottom">
+          <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p>
+        </div>
+      </div>
     </footer>
-    <!-- JAVASCRIPT: mobile menu button, filters, contact form -->
-    <script src="app.js">
-    </script>
+
+    <script src="app.js"></script>
   </body>
 </html>

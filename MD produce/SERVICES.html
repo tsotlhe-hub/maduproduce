@@ -1,4 +1,326 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services | Madu Produce</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><a class="brand" href="index.html"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></a><button class="burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="services.html" class=active aria-current=page>Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a><a href="sitemap.html">Site Map</a></nav></header><main><section class="hero"><div class="scene s-field"></div><div class="shade"></div><div class="hin"><h1>Our Services</h1><p>A range of services to meet your needs.</p></div></section><div class="g4"><div class="fc"><span class="ic">🌿</span><h3>Fresh Produce Sales</h3><p>High-quality, fresh and local produce.</p></div><div class="fc"><span class="ic">📦</span><h3>Bulk Orders</h3><p>Bulk orders for events, businesses or large families.</p></div><div class="fc"><span class="ic">🚚</span><h3>Wholesale Supply</h3><p>We supply retailers, supermarkets and other businesses.</p></div><div class="fc"><span class="ic">📍</span><h3>Local Delivery</h3><p>Convenient delivery for customers in the local area (conditions apply).</p></div></div><section class="sec"><div class="why"><h2>Why Choose Us?</h2><ul><li>Fresh & local produce</li><li>Reliable supply</li><li>Competitive prices</li><li>Support local farmers</li><li>Sustainable farming</li></ul></div></section><section class="cta"><div class="scene s-field"></div><div class="shade"></div><div class="hin"><h2>Good Food Builds a Healthier Community</h2><a class="btn" href="contact.html">Get in Touch ›</a></div></section></main><div class="pager"><a href="products.html">‹ Products</a><a href="index.html">Home</a><a href="gallery.html">Gallery ›</a></div>
-<footer><div class="fgrid"><div><div class="brand light"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></div></div>
-<div><h4>Contact</h4><p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p></div>
-<div><h4>Quick Links</h4><div class="ql"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services | Madu Produce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scoped styling to guarantee images in each container never overlap -->
+    <style>
+      /* Ensure Hero Image completely covers the banner with no green overlay */
+      .hero {
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        min-height: 420px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #151d18 !important;
+        border-radius: 14px;
+        margin: 14px 0 24px 0 !important;
+        padding: 0 !important;
+      }
+      .hero .scene {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+        display: block !important;
+      }
+      .hero .shade {
+        display: none !important;
+      }
+      .hero .hin {
+        position: relative !important;
+        z-index: 2 !important;
+        text-align: center !important;
+        color: #fff !important;
+      }
+      .hero .hin h1 {
+        color: #083d02 !important;
+        font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95);
+      }
+      .hero .hin p {
+        color: #012e14 !important;
+        font-size: 1.2rem !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      }
+
+      /* Why Choose Us side-by-side photo layout */
+      .why-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .why-img-box {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        min-height: 320px;
+        box-shadow: var(--shadow);
+      }
+      .why-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* CTA Bottom Banner */
+      .cta {
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 16px;
+        min-height: 280px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 30px 0 40px !important;
+        background: #151d18 !important;
+        box-shadow: var(--shadow);
+      }
+      .cta .scene {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+        display: block !important;
+      }
+      .cta .shade {
+        display: none !important;
+      }
+      .cta .hin {
+        position: relative !important;
+        z-index: 2 !important;
+        text-align: center !important;
+        color: #fff !important;
+        padding: 40px 20px !important;
+        max-width: 650px !important;
+      }
+      .cta .hin h2 {
+        color: #fff !important;
+        font-size: clamp(1.8rem, 4vw, 2.4rem) !important;
+        margin-bottom: 18px !important;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95) !important;
+      }
+
+      @media (max-width: 768px) {
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .why-img-box {
+          min-height: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP HEADER -->
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+          <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+        </svg>
+        <span>
+          <b>MADU PRODUCE</b>
+          <small>Fresh · Local · Sustainable</small>
+        </span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="services.html" class="active" aria-current="page">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION: FULL IMAGE COVERAGE, NO GREEN SHADE -->
+      <section class="hero">
+        <img 
+          class="scene" 
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80" 
+          alt="Madu Produce Agricultural Fields"
+        >
+        <div class="hin">
+          <h1>Our Services</h1>
+          <p>A comprehensive range of agricultural and fresh produce solutions.</p>
+        </div>
+      </section>
+
+      <!-- 4 SERVICE CONTAINERS WITH DEDICATED IMAGES (ZERO OVERLAP) -->
+      <div class="g4">
+        <!-- 1. Fresh Produce Sales -->
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" 
+            alt="Fresh Produce Sales"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Fresh Produce Sales</h3>
+            <p>High-quality, freshly harvested vegetables picked daily at peak ripeness for homes and kitchens.</p>
+          </div>
+        </div>
+
+        <!-- 2. Bulk Orders -->
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=600&q=80" 
+            alt="Bulk Orders"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Bulk Orders</h3>
+            <p>Economical crate packaging for weddings, corporate catering, hotels, and large household events.</p>
+          </div>
+        </div>
+
+        <!-- 3. Wholesale Supply -->
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80" 
+            alt="Wholesale Supply"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Wholesale Supply</h3>
+            <p>Reliable recurring supplier partnerships for supermarkets, grocery stores, and food distributors.</p>
+          </div>
+        </div>
+
+        <!-- 4. Local Delivery -->
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" 
+            alt="Local Delivery"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Local Delivery</h3>
+            <p>Prompt, temperature-careful dispatch right to your doorstep across the Gaborone region.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY CHOOSE US (BALANCED WITH RELATED IMAGE) -->
+      <section class="sec">
+        <div class="why-grid">
+          <div class="why" style="max-width: 100%;">
+            <span class="kick" style="color: #a4d4b3; background: rgba(255,255,255,0.1); margin-bottom: 10px;">The Madu Advantage</span>
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li><b>Fresh & local:</b> Harvested directly from Botswana soil every morning.</li>
+              <li><b>Reliable supply:</b> Guaranteed consistency for ongoing business orders.</li>
+              <li><b>Competitive prices:</b> Farm-gate rates without supermarket middlemen.</li>
+              <li><b>Community support:</b> Empowering local farmers and workers.</li>
+              <li><b>Sustainable practices:</b> Eco-conscious drip irrigation and soil stewardship.</li>
+            </ul>
+          </div>
+          <div class="why-img-box">
+  <img 
+    src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80" 
+    alt="Local farmer holding fresh organic harvest"
+    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80';"
+  >
+</div>
+      </section>
+
+      <!-- BOTTOM CTA BANNER WITH RELATED IMAGE (ZERO OVERLAP) -->
+      <section class="cta">
+        <img 
+          class="scene" 
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80" 
+          alt="Good Food Builds a Healthier Community"
+        >
+        <div class="hin">
+          <h2>Good Food Builds a Healthier Community</h2>
+          <a class="btn" href="contact.html">Get in Touch ›</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAGER -->
+    <div class="pager">
+      <a href="products.html">‹ Products</a>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery ›</a>
+    </div>
+
+    <!-- COMPLETE FOOTER -->
+    <footer>
+      <div class="fgrid">
+        <div>
+          <div class="brand light">
+            <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+              <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+            </svg>
+            <span>
+              <b>MADU PRODUCE</b>
+              <small>Fresh · Local · Sustainable</small>
+            </span>
+          </div>
+          <p style="margin-top: 10px; font-size: 0.85rem; color: #a4d4b3;">Supplying fresh, locally grown agricultural produce to households and businesses across Botswana.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="ql">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+    
+          </div>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="soc">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+      </div>
+      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      const burger = document.getElementById('burgerBtn');
+      const nav = document.getElementById('nav');
+      if (burger && nav) {
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('open');
+        });
+      }
+    </script>
+  </body>
+</html>

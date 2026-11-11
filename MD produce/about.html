@@ -1,6 +1,285 @@
-fix hero and product layout<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Us | Madu Produce</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><a class="brand" href="index.html"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></a><button class="burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="nav"><a href="index.html">Home</a><a href="about.html" class=active aria-current=page>About Us</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a><a href="sitemap.html">Site Map</a></nav></header><main><section class="hero"><div class="scene s-field"></div><div class="shade"></div><div class="hin"><h1>About Madu Produce</h1><p>An agricultural business established in November 2025.</p></div></section><section class="sec two"><div><figure class="ph big"><img src="images/farm.jpg" alt="Madu Produce farm" onerror="this.remove()"><figcaption>Madu Produce farm</figcaption></figure></div><div><h2>About Us</h2><p>Madu Produce is an agricultural business dedicated to growing and supplying fresh, high-quality produce to individuals, households, local restaurants, retailers and other businesses.</p><p>We are passionate about farming and committed to providing nutritious, locally grown products while supporting sustainable agriculture in our community.</p></div></section><div class="g4"><div class="fc"><span class="ic">🌿</span><h3>Local Farming</h3><p>Supporting local farmers.</p></div><div class="fc"><span class="ic">✔</span><h3>Quality Produce</h3><p>Fresh and nutritious products.</p></div><div class="fc"><span class="ic">👥</span><h3>Community Driven</h3><p>Stronger communities, healthier lives.</p></div></div><section class="sec story two"><div><h2>Our Story</h2><p>We started with a simple goal: bring fresh, healthy and affordable produce from our farms to your table, while supporting local farmers and sustainable farming practices.</p><a class="btn" href="gallery.html">See the Farm ›</a></div><figure class="ph "><img src="images/story.jpg" alt="Planting and harvesting" onerror="this.remove()"><figcaption>Planting and harvesting</figcaption></figure></section><section class="mv"><div><span class="ic w">🌿</span><h3>Our Mission</h3><p>Madu Produce builds a positive relationship between farmers and consumers by making sure fresh produce reaches valued customers in a sustainable and reliable way.</p></div><div><span class="ic w">👁</span><h3>Our Vision</h3><p>To become a trusted and leading local agricultural produce business, recognised for fresh quality products and for contributing to the economy’s agricultural sector.</p></div></section></main><div class="pager"><a href="index.html">‹ Home</a><a href="index.html">Home</a><a href="products.html">Products ›</a></div>
-<footer><div class="fgrid"><div><div class="brand light"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></div></div>
-<div><h4>Contact</h4><p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p></div>
-<div><h4>Quick Links</h4><div class="ql"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
-<div><h4>Follow Us</h4><div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div></div></div>
-<p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p></footer><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us | Madu Produce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scoped styles to ensure hero and image containers fully cover with ZERO overlap -->
+    <style>
+      .hero {
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        min-height: 420px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #151d18 !important;
+        border-radius: 14px;
+        margin: 14px 0 24px 0 !important;
+        padding: 0 !important;
+      }
+      .hero .scene {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+        display: block !important;
+      }
+      .hero .shade {
+        display: none !important;
+      }
+      .hero .hin {
+        position: relative !important;
+        z-index: 2 !important;
+        text-align: center !important;
+        color: #034e13 !important;
+      }
+      .hero .hin h1 {
+        color: #02420c !important;
+        font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95);
+      }
+      .hero .hin p {
+        color: #025e02 !important;
+        font-size: 1.2rem !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Image wrapper consistency */
+      .ph {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .ph img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP HEADER -->
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+          <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+        </svg>
+        <span>
+          <b>MADU PRODUCE</b>
+          <small>Fresh · Local · Sustainable</small>
+        </span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active" aria-current="page">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION: FULL IMAGE COVERAGE, NO GREEN SHADE -->
+      <section class="hero">
+        <img 
+          class="scene" 
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80" 
+          alt="Madu Produce Farm Fields"
+        >
+        <div class="hin">
+          <h1>About Madu Produce</h1>
+          <p>An agricultural business established in November 2025.</p>
+        </div>
+      </section>
+
+      <!-- ABOUT US: TWO COLUMN LAYOUT -->
+      <section class="sec two">
+        <div>
+          <figure class="ph big">
+            <img 
+              src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80" 
+              alt="Madu Produce farm"
+              onerror="this.onerror=null;this.src='images/farm.jpg';"
+            >
+            <figcaption>Madu Produce farm harvest</figcaption>
+          </figure>
+        </div>
+        <div>
+          <span class="kick">Cultivating Freshness</span>
+          <h2>Who We Are</h2>
+          <p>Madu Produce is an agricultural enterprise dedicated to growing and supplying fresh, high-quality vegetables and fruits to individuals, households, local restaurants, supermarkets, and catering businesses across Botswana.</p>
+          <p>We are passionate about responsible farming and committed to providing clean, nutritious, locally grown products while actively supporting sustainable agricultural practices in our community.</p>
+        </div>
+      </section>
+
+      <!-- 4 VALUE CARDS WITH RELATED IMAGES (NO OVERLAPPING) -->
+      <div class="g4">
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" 
+            alt="Local Farming"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Local Farming</h3>
+            <p>Empowering local Botswana agricultural workers and utilizing smart soil care.</p>
+          </div>
+        </div>
+
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" 
+            alt="Quality Produce"
+          >
+          <div class="fc-body">
+            <span class="ic">✔</span>
+            <h3>Quality Produce</h3>
+            <p>Picked at peak nutritional ripeness, washed, and handled with strict hygiene standards.</p>
+          </div>
+        </div>
+
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80" 
+            alt="Community Driven"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Community Driven</h3>
+            <p>Supplying affordable, fresh food that supports healthier local families and livelihoods.</p>
+          </div>
+        </div>
+
+        <div class="fc">
+          <img 
+            class="fc-image" 
+            src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=600&q=80" 
+            alt="Sustainable Practices"
+          >
+          <div class="fc-body">
+            <span class="ic"></span>
+            <h3>Water Smart</h3>
+            <p>Drip irrigation and climate-adapted farming preserving precious water resources.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OUR STORY: TWO COLUMN CARD -->
+      <section class="sec story two">
+        <div>
+          <span class="kick">Our Journey</span>
+          <h2>Our Story</h2>
+          <p>We started with a clear purpose: bridge the gap between fresh, healthy, affordable produce and local consumers, while backing local farming talent and sustainable techniques.</p>
+          <p>From our very first planted seedbed to daily commercial distributions, Madu Produce has grown into a trusted producer of Botswana's most dependable vegetables.</p>
+          <a class="btn" href="gallery.html">See the Farm ›</a>
+        </div>
+        <figure class="ph">
+          <img 
+            src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80" 
+            alt="Planting and harvesting at Madu Produce"
+            onerror="this.onerror=null;this.src='images/story.jpg';"
+          >
+          <figcaption>Planting and harvesting in Botswana</figcaption>
+        </figure>
+      </section>
+
+      <!-- MISSION & VISION -->
+      <section class="mv">
+        <div>
+          <span class="ic w"></span>
+          <h3>Our Mission</h3>
+          <p>Madu Produce builds a positive relationship between farmers and consumers by making sure fresh produce reaches valued customers in a sustainable, reliable, and affordable way.</p>
+        </div>
+        <div>
+          <span class="ic w"></span>
+          <h3>Our Vision</h3>
+          <p>To become a trusted and leading local agricultural produce business, recognised for fresh quality products and for contributing to the economy’s agricultural food security.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAGER -->
+    <div class="pager">
+      <a href="index.html">‹ Home</a>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products ›</a>
+    </div>
+
+    <!-- COMPLETE FOOTER -->
+    <footer>
+      <div class="fgrid">
+        <div>
+          <div class="brand light">
+            <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+              <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+            </svg>
+            <span>
+              <b>MADU PRODUCE</b>
+              <small>Fresh · Local · Sustainable</small>
+            </span>
+          </div>
+          <p style="margin-top: 10px; font-size: 0.85rem; color: #a4d4b3;">Growing sustainable, locally harvested produce across Botswana.</p>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <div class="ql">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Follow Us</h4>
+          <div class="soc">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      const burger = document.getElementById('burgerBtn');
+      const nav = document.getElementById('nav');
+      if (burger && nav) {
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('open');
+        });
+      }
+    </script>
+  </body>
+</html>

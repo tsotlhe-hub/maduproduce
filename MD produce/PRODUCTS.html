@@ -4,9 +4,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Products | Madu Produce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      /* ==========================================================
+         HERO SECTION: 100% FULL IMAGE COVERAGE & NO GREEN OVERLAY
+         ========================================================== */
+      .hero {
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        min-height: 420px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #111 !important;
+        border-radius: 14px;
+        margin: 14px 0 24px 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Forces image to cover 100% of width and height */
+      .hero img.scene,
+      .hero img.hero-img,
+      .hero > img {
+        position: absolute !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important; /* Crops cleanly to fill 100% of the area */
+        object-position: center !important;
+        display: block !important;
+        z-index: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Removes the green shade */
+      .hero .shade,
+      .shade {
+        display: none !important;
+      }
+
+      /* Centered text sitting cleanly on top of the full photo */
+      .hero .hin {
+        position: relative !important;
+        z-index: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        padding: 40px 20px !important;
+        margin: 0 auto !important;
+      }
+
+      .hero .hin h1 {
+        font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin: 0 0 10px 0 !important;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+      }
+
+      .hero .hin p {
+        font-size: 1.15rem !important;
+        color: #ffffff !important;
+        margin: 0 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95) !important;
+      }
+    </style>
   </head>
   <body>
+    <!-- TOP BAR -->
     <header class="top">
       <a class="brand" href="index.html">
         <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
@@ -18,27 +98,34 @@
           <small>Fresh · Local · Sustainable</small>
         </span>
       </a>
-      <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+      <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">☰</button>
       <nav id="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="products.html" class=active aria-current=page>Products</a>
+        <a href="products.html" class="active" aria-current="page">Products</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact Us</a>
       </nav>
     </header>
+
     <main>
-      <section class="hero">
-        <img class="scene" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1600&q=70" alt="" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/hero-products.jpg'}else this.remove()">
-        <div class="shade">
-        </div>
-        <div class="hin">
-          <h1>Our Products</h1>
-          <p>Fresh, quality produce grown with care.</p>
+      <!-- HERO: Image 100% covers the whole section without any empty white side -->
+      <section class="hero" style="position: relative; width: 100%; min-height: 420px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <img 
+          class="scene hero-img" 
+          src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80" 
+          alt="Fresh Farm Produce" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-width: 100%; min-height: 100%; object-fit: cover; object-position: center; z-index: 1; display: block;"
+        >
+        <div class="hin" style="position: relative; z-index: 2; text-align: center; color: #fff;">
+          <h1 style="color: #fff; text-shadow: 0 3px 15px rgba(0,0,0,0.95);">Our Products</h1>
+          <p style="color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.95);">Fresh, quality produce grown with care.</p>
         </div>
       </section>
+
       <section class="sec">
+        <!-- FILTER TABS -->
         <div class="tabs">
           <button class="tab on" data-f="All">All</button>
           <button class="tab" data-f="Vegetables">Vegetables</button>
@@ -46,10 +133,12 @@
           <button class="tab" data-f="Herbs">Herbs</button>
           <button class="tab" data-f="Other">Other</button>
         </div>
+
         <div class="g4" id="grid">
+          <!-- 1. Tomatoes -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg tomato">
-              <img src="https://images.unsplash.com/photo-1568581789190-ae90a7da930b?auto=format&fit=crop&w=800&q=70" alt="Tomatoes" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/tomato.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1568581789190-ae90a7da930b?auto=format&fit=crop&w=800&q=70" alt="Tomatoes">
             </div>
             <h3>Tomatoes</h3>
             <p>Juicy, vine-ripened tomatoes.</p>
@@ -58,9 +147,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 2. Green Pepper -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg pepper">
-              <img src="https://images.unsplash.com/photo-1592548868664-f8b4e4b1cfb7?auto=format&fit=crop&w=800&q=70" alt="Green Pepper" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/pepper.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1592548868664-f8b4e4b1cfb7?auto=format&fit=crop&w=800&q=70" alt="Green Pepper">
             </div>
             <h3>Green Pepper</h3>
             <p>Crisp and fresh green peppers.</p>
@@ -69,9 +160,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 3. Onions -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg onion">
-              <img src="https://images.unsplash.com/photo-1571167002474-17b083c46f90?auto=format&fit=crop&w=800&q=70" alt="Onions" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/onion.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1571167002474-17b083c46f90?auto=format&fit=crop&w=800&q=70" alt="Onions">
             </div>
             <h3>Onions</h3>
             <p>Flavourful onions, ideal for cooking.</p>
@@ -80,9 +173,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 4. Carrots (Fixed working image) -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg carrot">
-              <img src="https://images.unsplash.com/photo-1687199126330-556bb3c85b2f?auto=format&fit=crop&w=800&q=70" alt="Carrots" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/carrot.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80" alt="Carrots">
             </div>
             <h3>Carrots</h3>
             <p>Sweet and crunchy carrots.</p>
@@ -91,9 +186,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 5. Cabbage -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg cabbage">
-              <img src="https://images.unsplash.com/photo-1652860213441-6622f9fec77f?auto=format&fit=crop&w=800&q=70" alt="Cabbage" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/cabbage.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1652860213441-6622f9fec77f?auto=format&fit=crop&w=800&q=70" alt="Cabbage">
             </div>
             <h3>Cabbage</h3>
             <p>Crisp and healthy cabbages.</p>
@@ -102,9 +199,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 6. Spinach -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg spinach">
-              <img src="https://unsplash.com/photos/wYpOl2Y1ROE/download?force=true&w=800" alt="Spinach" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/spinach.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=70" alt="Spinach">
             </div>
             <h3>Spinach</h3>
             <p>Nutritious and fresh spinach.</p>
@@ -113,9 +212,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 7. Lettuce -->
           <article class="pc" data-cat="Vegetables">
             <div class="pimg lettuce">
-              <img src="https://images.unsplash.com/photo-1597216148867-c934590e6ea3?auto=format&fit=crop&w=800&q=70" alt="Lettuce" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/lettuce.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1597216148867-c934590e6ea3?auto=format&fit=crop&w=800&q=70" alt="Lettuce">
             </div>
             <h3>Lettuce</h3>
             <p>Crisp lettuce, perfect for salads.</p>
@@ -124,9 +225,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 8. Herbs -->
           <article class="pc" data-cat="Herbs">
             <div class="pimg herbs">
-              <img src="https://images.unsplash.com/photo-1690902955790-d00761af3db0?auto=format&fit=crop&w=800&q=70" alt="Herbs" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/herbs.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1690902955790-d00761af3db0?auto=format&fit=crop&w=800&q=70" alt="Herbs">
             </div>
             <h3>Herbs</h3>
             <p>Fresh herbs for better taste.</p>
@@ -135,9 +238,11 @@
               <span class="stock">In Stock</span>
             </div>
           </article>
+
+          <!-- 9. Seasonal Fruits -->
           <article class="pc" data-cat="Fruits">
             <div class="pimg fruit">
-              <img src="https://images.unsplash.com/photo-1576021182211-9ea8dced3690?auto=format&fit=crop&w=800&q=70" alt="Seasonal Fruits" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/fruit.jpg'}else this.remove()">
+              <img src="https://images.unsplash.com/photo-1576021182211-9ea8dced3690?auto=format&fit=crop&w=800&q=70" alt="Seasonal Fruits">
             </div>
             <h3>Seasonal Fruits</h3>
             <p>Locally grown seasonal fruit.</p>
@@ -147,14 +252,19 @@
             </div>
           </article>
         </div>
+
         <p class="note">Prices and availability are examples; update them as stock changes.</p>
       </section>
     </main>
+
+    <!-- PAGER -->
     <div class="pager">
       <a href="about.html">‹ About Us</a>
       <a href="index.html">Home</a>
       <a href="services.html">Services ›</a>
     </div>
+
+    <!-- FOOTER -->
     <footer>
       <div class="fgrid">
         <div>
@@ -182,7 +292,6 @@
             <a href="services.html">Services</a>
             <a href="gallery.html">Gallery</a>
             <a href="contact.html">Contact Us</a>
-            <a href="sitemap.html">Site Map</a>
           </div>
         </div>
         <div>
@@ -194,10 +303,33 @@
           </div>
         </div>
       </div>
-      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i>
-      </p>
+      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p>
     </footer>
-    <script src="app.js">
+
+    <!-- INTERACTIVE TAB FILTER SCRIPT -->
+    <script>
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+          tab.classList.add('on');
+          const cat = tab.getAttribute('data-f');
+          document.querySelectorAll('.pc').forEach(card => {
+            if (cat === 'All' || card.getAttribute('data-cat') === cat) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      const burger = document.getElementById('burgerBtn');
+      const nav = document.getElementById('nav');
+      if (burger && nav) {
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('open');
+        });
+      }
     </script>
   </body>
 </html>

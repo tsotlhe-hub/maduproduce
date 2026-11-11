@@ -1,6 +1,408 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact Us | Madu Produce</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><a class="brand" href="index.html"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></a><button class="burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html" class=active aria-current=page>Contact Us</a><a href="sitemap.html">Site Map</a></nav></header><main><section class="hero"><div class="scene s-field"></div><div class="shade"></div><div class="hin"><h1>Contact Us</h1><p>We’d love to hear from you. Get in touch for enquiries or orders.</p></div></section><section class="sec two"><form id="cf" novalidate><h2>Send Us a Message</h2><label>Name *<input name="n" required placeholder="Your name"></label><label>Email *<input name="e" type="email" required placeholder="Your email"></label><label>Message *<textarea name="m" rows="5" required placeholder="Type your message here..."></textarea></label><button class="btn" type="submit">Send Message ›</button><p id="msg" role="status"></p></form><div><h2>Contact Information</h2><p>📞 +267 71 234 567</p><p>✉ info@maduproduce.co.bw</p><p>📍 Plot 123, Gaborone, Botswana</p><h3>Follow Us</h3><div class="soc dark"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div><a class="map" href="https://www.google.com/maps/search/Gaborone+Botswana" target="_blank" rel="noopener">📍 Find us on the map</a></div></section></main><div class="pager"><a href="gallery.html">‹ Gallery</a><a href="index.html">Home</a><a href="sitemap.html">Site Map ›</a></div>
-<footer><div class="fgrid"><div><div class="brand light"><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/><path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/></svg><span><b>MADU PRODUCE</b><small>Fresh · Local · Sustainable</small></span></div></div>
-<div><h4>Contact</h4><p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p></div>
-<div><h4>Quick Links</h4><div class="ql"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
-<div><h4>Follow Us</h4><div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div></div></div>
-<p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p></footer><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us | Madu Produce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      /* Clean Page Header (Hero Removed) */
+      .contact-page-header {
+        text-align: center;
+        padding: 40px 20px 20px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .contact-page-header h1 {
+        font-size: clamp(2.2rem, 5vw, 3rem);
+        color: var(--gd);
+        margin: 8px 0 12px;
+        font-weight: 800;
+      }
+      .contact-page-header p {
+        font-size: 1.1rem;
+        color: var(--mut);
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      /* Two Column Layout: Form and Info */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+        margin-bottom: 35px;
+      }
+
+      .contact-card, .info-card {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h2, .info-card h2 {
+        color: var(--gd);
+        margin-bottom: 6px;
+      }
+      .card-desc {
+        color: var(--mut);
+        font-size: 0.92rem;
+        margin-bottom: 20px;
+      }
+
+      /* Form Elements */
+      form label {
+        display: block;
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--gd);
+      }
+      form input, form textarea {
+        display: block;
+        width: 100%;
+        margin-top: 6px;
+        padding: 11px 14px;
+        border: 1px solid #b9cbbd;
+        border-radius: 10px;
+        font: inherit;
+        background: #fafdfa;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      form input:focus, form textarea:focus {
+        outline: none;
+        border-color: var(--g);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(31, 107, 63, 0.2);
+      }
+
+      /* Info Items */
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+      .info-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: var(--gl);
+        color: var(--g);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+      .info-text b {
+        display: block;
+        font-size: 0.95rem;
+        color: var(--gd);
+        margin-bottom: 2px;
+      }
+      .info-text span, .info-text a {
+        font-size: 0.92rem;
+        color: var(--mut);
+      }
+      .info-text a:hover {
+        color: var(--g);
+      }
+
+      /* Actual Interactive Google Map Box */
+      .map-section {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+        margin-bottom: 40px;
+      }
+      .map-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .map-header h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: var(--gd);
+      }
+      .map-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--g);
+        color: #014123 !important;
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 8px 18px;
+        border-radius: 50px;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .map-link-btn:hover {
+        background: var(--gd);
+        transform: translateY(-2px);
+      }
+      .map-frame-wrapper {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .map-frame-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .map-frame-wrapper {
+          height: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+          <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+        </svg>
+        <span>
+          <b>MADU PRODUCE</b>
+          <small>Fresh · Local · Sustainable</small>
+        </span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active" aria-current="page">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- CLEAN TITLE (HERO REMOVED) -->
+      <section class="contact-page-header">
+        <span class="kick">Get in Touch</span>
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you. Send us a message below or visit our farm plot in Gaborone.</p>
+      </section>
+
+      <!-- TWO-COLUMN SECTION -->
+      <section class="sec" style="padding-top: 10px;">
+        <div class="contact-grid">
+          <!-- 1. Send Us a Message Form -->
+          <div class="contact-card">
+            <h2>Send Us a Message</h2>
+            <p class="card-desc">Have a question or looking to place an order? Leave a note and we'll reply promptly.</p>
+            
+            <form id="cf" novalidate>
+              <label>Full Name *
+                <input name="n" required placeholder="e.g. Kagiso Motsepe">
+              </label>
+              <label>Email Address *
+                <input name="e" type="email" required placeholder="e.g. name@example.com">
+              </label>
+              <label>Phone Number (Optional)
+                <input name="p" type="tel" placeholder="e.g. +267 71 234 567">
+              </label>
+              <label>Your Message *
+                <textarea name="m" rows="4" required placeholder="Type your message here..."></textarea>
+              </label>
+              <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">Send Message ›</button>
+              <p id="msg" role="status" style="margin-top: 12px; font-weight: 600;"></p>
+            </form>
+          </div>
+
+          <!-- 2. Contact Information -->
+          <div class="info-card">
+            <div>
+              <h2>Contact Information</h2>
+              <p class="card-desc">Reach out directly via phone, WhatsApp, or email.</p>
+
+              <div class="info-item">
+                <div class="info-icon"></div>
+                <div class="info-text">
+                  <b>Phone / WhatsApp</b>
+                  <a href="tel:+26771234567">+267 71 234 567</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"></div>
+                <div class="info-text">
+                  <b>Email Support</b>
+                  <a href="mailto:info@maduproduce.co.bw">info@maduproduce.co.bw</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"></div>
+                <div class="info-text">
+                  <b>Farm Location</b>
+                  <span>Plot 123, Gaborone, Botswana</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"></div>
+                <div class="info-text">
+                  <b>Farm Hours</b>
+                  <span>Mon – Sat: 7:00 AM – 5:30 PM (Sunday Closed)</span>
+                </div>
+              </div>
+
+              <h3 style="margin-top: 24px; font-size: 1.1rem; color: var(--gd);">Follow Us</h3>
+              <div class="soc dark" style="margin-top: 8px;">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+                <a href="#" aria-label="WhatsApp">wa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ACTUAL LIVE INTERACTIVE GOOGLE MAP -->
+        <div class="map-section">
+          <div class="map-header">
+            <div>
+              <h2>Find Us on the Map</h2>
+              <span style="font-size: 0.9rem; color: var(--mut);">Explore our farm location in Gaborone, Botswana</span>
+            </div>
+            <a 
+              class="map-link-btn" 
+              href="https://www.google.com/maps/search/?api=1&query=Gaborone,+Botswana" 
+              target="_blank" 
+              rel="noopener"
+            >
+               Open in Google Maps ›
+            </a>
+          </div>
+
+          <!-- Interactive Map Embed -->
+          <div class="map-frame-wrapper">
+            <iframe 
+              title="Madu Produce Location - Gaborone, Botswana"
+              src="https://maps.google.com/maps?q=Gaborone,+Botswana&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAGER -->
+    <div class="pager">
+      <a href="gallery.html">‹ Gallery</a>
+      <a href="index.html">Home</a>
+      <a href="sitemap.html">Site Map ›</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="fgrid">
+        <div>
+          <div class="brand light">
+            <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+              <path d="M20 36V18" stroke="#2e7d4f" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 20C8 20 6 10 6 6c10 0 14 4 14 14zM20 24c10 0 14-6 14-12-9 0-14 4-14 12z" fill="#2e7d4f"/>
+            </svg>
+            <span>
+              <b>MADU PRODUCE</b>
+              <small>Fresh · Local · Sustainable</small>
+            </span>
+          </div>
+          <p style="margin-top: 10px; font-size: 0.85rem; color: #a4d4b3;">Harvesting local goodness in Botswana every single day.</p>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <p>+267 71 234 567<br>info@maduproduce.co.bw<br>Plot 123, Gaborone, Botswana</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <div class="ql">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="sitemap.html">Site Map</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Follow Us</h4>
+          <div class="soc">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="copy">© 2025 Madu Produce. All rights reserved. <i>Grow Together · Support Local · A Greener Future</i></p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script src="app.js"></script>
+    <script>
+      // Form submission feedback
+      const form = document.getElementById('cf');
+      const msg = document.getElementById('msg');
+      if (form && msg) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = form.querySelector('[name="n"]');
+          const emailInput = form.querySelector('[name="e"]');
+          const messageInput = form.querySelector('[name="m"]');
+
+          if (!nameInput.value || !emailInput.value || !messageInput.value) {
+            msg.style.color = '#b3261e';
+            msg.textContent = 'Please fill out all required fields.';
+            return;
+          }
+
+          msg.style.color = 'var(--g)';
+          msg.textContent = '✔ Thank you! Your message has been sent successfully. We will contact you shortly.';
+          form.reset();
+        });
+      }
+
+      // Mobile burger menu
+      const burger = document.getElementById('burgerBtn');
+      const nav = document.getElementById('nav');
+      if (burger && nav) {
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('open');
+        });
+      }
+    </script>
+  </body>
+</html>
